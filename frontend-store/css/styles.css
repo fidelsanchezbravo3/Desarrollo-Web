@@ -2,7 +2,7 @@
     --primario: #9C27B0;
     --primarioOscuro: #89119D;
     --secundario: #FFCE00;
-    --secundarioOscuro: rgb(233,287,2);
+    --secundarioOscuro: rgb(233,187,2);
     --blanco: #FFF;
     --negro: #000;
 
@@ -14,9 +14,7 @@ html {
     font-size: 62.5%;
 }
 
-*, *:before, *:after {
-    box-sizing: inherit;
-}
+*, *:before, *:after { box-sizing: inherit; }
 
 /* Globales */
 body {
@@ -33,7 +31,7 @@ p {
 
 a { text-decoration: none; }
 
-img { max-width: 100%; }
+img { width: 100%; }
 
 .contenedor {
     margin: 0 auto;
@@ -89,14 +87,10 @@ h3 { font-size: 2.4rem; }
     margin-right: 2rem;
 }
 
-.navegacion__enlace:last-of-type {
-    margin-right: 0;
-}
+.navegacion__enlace:last-of-type { margin-right: 0; }
 
 .navegacion__enlace:hover,
-.navegacion__enlace--activo {
-    color: var(--secundario);
-}
+.navegacion__enlace--activo { color: var(--secundario); }
 
 /* Grid */
 .grid {
@@ -106,9 +100,7 @@ h3 { font-size: 2.4rem; }
 }
 
 @media (min-width: 768px) {
-    .grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+    .grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 /* Productos */
@@ -118,17 +110,7 @@ h3 { font-size: 2.4rem; }
     padding: 1rem;
 }
 
-.producto__imagen {
-    width: 100%;
-}
-
-.producto__informacion {
-
-}
-
-.producto__nombre {
-    font-size: 4rem;
-}
+.producto__nombre { font-size: 4rem; }
 
 .producto__precio {
     color: var(--secundario);
@@ -181,15 +163,10 @@ h3 { font-size: 2.4rem; }
     }
 }
 
-.nosotros__imagen {
-    grid-row: 1 / 2;
-    width: 100%;
-}
+.nosotros__imagen { grid-row: 1 / 2; }
 
 @media (min-width: 768px) {
-    .nosotros__imagen {
-        grid-column: 2 / 3;
-    }
+    .nosotros__imagen { grid-column: 2 / 3; }
 }
 
 /* Bloques */
@@ -199,19 +176,51 @@ h3 { font-size: 2.4rem; }
 }
 
 @media (min-width: 768px) {
-    .bloques {
-        grid-template-columns: repeat(4, 1fr);
+    .bloques { grid-template-columns: repeat(4, 1fr); }
+}
+
+.bloque { text-align: center; }
+
+.bloque__titulo { margin: 0; }
+
+/* Pagina del Producto */
+@media (min-width: 768px){
+    .camisa {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
     }
 }
 
-.bloque {
-    text-align: center;
+.formulario {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
 }
 
-.bloque__titulo {
-    margin: 0;
+.formulario__campo {
+    appearance: none;
+    background-color: transparent;
+    border-color: var(--primarioOscuro);
+    border-style: solid;
+    border-width: 1rem;
+    color: var(--blanco);
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
 }
 
-.bloque__imagen {
-    width: 100%;    
+.formulario__submit {
+    background-color: var(--secundario);
+    border: none;
+    font-family: var(--fuentePrincipal);
+    font-size: 2rem;
+    grid-column: 1 / 2;
+    padding: 2rem;
+    transition: background-color .3s ease;
+}
+
+.formulario__submit:hover {
+    background-color: var(--secundarioOscuro);
+    cursor: pointer;
 }
